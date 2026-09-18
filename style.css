@@ -50,6 +50,29 @@ main,
   padding: 4.5rem 0 3.5rem;
   border-bottom: 1px solid var(--line);
   margin-bottom: 3.5rem;
+
+  /* Text on the left, shark on the right. flex-wrap lets the shark
+     drop underneath once the screen gets too narrow for both. */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.header__text {
+  flex: 1 1 22rem;
+}
+
+.header__art {
+  flex: 0 1 15rem;
+}
+
+/* Let the drawing shrink with its column instead of overflowing. */
+.header__art img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .header__kicker {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,12 +19,24 @@
 
   <body>
     <header class="header">
-      <p class="header__kicker">Six things about sharks</p>
-      <h1 class="header__title">Older than trees, and still swimming</h1>
-      <p class="header__lead">
-        Sharks have been in the ocean for about 450 million years. Here is a
-        small collection of facts that make that easier to believe.
-      </p>
+      <div class="header__text">
+        <p class="header__kicker">Six things about sharks</p>
+        <h1 class="header__title">Older than trees, and still swimming</h1>
+        <p class="header__lead">
+          Sharks have been in the ocean for about 450 million years. Here is a
+          small collection of facts that make that easier to believe.
+        </p>
+      </div>
+
+      <!-- The image lives in its own file, next to this one. -->
+      <div class="header__art">
+        <img
+          src="assets/shark.svg"
+          alt="A smiling shark blowing bubbles"
+          width="260"
+          height="180"
+        />
+      </div>
     </header>
 
     <main>
@@ -89,7 +101,7 @@
     </main>
 
     <footer class="footer">
-      <p>Made for learning HTML and CSS. Add your own fact by copying one card.</p>
+      <p>made with ❤️ by Bruce</p>
     </footer>
   </body>
 </html>
