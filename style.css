@@ -4,13 +4,14 @@
    ========================================================== */
 
 :root {
-  --deep: #0e2b3f; /* deep water, used for the header */
+  --deep: #080b4f; /* deep water, used for the header */
   --ink: #16313f; /* body text */
   --muted: #5c7686; /* quieter text */
-  --foam: #f2f7f8; /* page background */
+  --foam: #d8dee4; /* page background */
   --paper: #ffffff; /* card background */
   --glow: #4fc9c0; /* the one bright accent */
   --line: #d9e4e8; /* borders */
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   --radius: 10px;
   --gap: 1.5rem;
@@ -133,6 +134,7 @@ main,
   transition:
     border-color 0.2s,
     transform 0.2s;
+  box-shadow: var(--shadow);
 }
 
 .fact:hover {
