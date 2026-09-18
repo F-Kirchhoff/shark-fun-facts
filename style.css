@@ -1,0 +1,157 @@
+/* ==========================================================
+   1. Variables
+   Change a value here and it updates everywhere on the page.
+   ========================================================== */
+
+:root {
+  --deep: #0e2b3f; /* deep water, used for the header */
+  --ink: #16313f; /* body text */
+  --muted: #5c7686; /* quieter text */
+  --foam: #f2f7f8; /* page background */
+  --paper: #ffffff; /* card background */
+  --glow: #4fc9c0; /* the one bright accent */
+  --line: #d9e4e8; /* borders */
+
+  --radius: 10px;
+  --gap: 1.5rem;
+}
+
+/* ==========================================================
+   2. Base
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 4rem;
+  background-color: var(--foam);
+  color: var(--ink);
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Everything sits in one centred column. */
+.header,
+main,
+.footer {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   3. Header
+   ========================================================== */
+
+.header {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3.5rem;
+}
+
+.header__kicker {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.header__title {
+  margin: 0;
+  max-width: 16ch;
+  color: var(--deep);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* A short accent rule under the headline. */
+.header__title::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 5px;
+  margin-top: 1.75rem;
+  background-color: var(--glow);
+}
+
+.header__lead {
+  max-width: 52ch;
+  margin: 1.75rem 0 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+/* ==========================================================
+   4. The grid of facts
+   auto-fit fits as many columns as there is room for, so the
+   cards stack by themselves on a narrow screen.
+   ========================================================== */
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--gap);
+}
+
+/* ==========================================================
+   5. One fact card
+   ========================================================== */
+
+.fact {
+  padding: 1.75rem;
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.fact:hover {
+  border-color: var(--glow);
+  transform: translateY(-3px);
+}
+
+.fact__title {
+  margin: 0 0 0.75rem;
+  color: var(--deep);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.fact__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   6. Footer
+   ========================================================== */
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* ==========================================================
+   7. Turn the movement off for anyone who asks for less of it
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .fact {
+    transition: none;
+  }
+
+  .fact:hover {
+    transform: none;
+  }
+}
